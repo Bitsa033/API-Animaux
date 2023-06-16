@@ -39,8 +39,8 @@ public class AnimalController {
 	}
 	
 	@DeleteMapping("delete/one/{id}")
-	public String delete(Animal id) {
-		an.delete(id);
+	public String delete(@PathVariable BigInteger id) {
+		an.deleteById(id);
 		return "Animal was removed successfully ...";
 		
 	}
