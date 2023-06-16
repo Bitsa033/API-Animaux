@@ -1,5 +1,6 @@
 package com.service.security;
 
+import java.math.BigInteger;
 import java.util.List;
 import java.util.Optional;
 
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,7 +27,7 @@ public class AnimalController {
 	}
 	
 	@GetMapping("get/one/{id}")
-	Optional<Animal> animal(Double id) {
+	Optional<Animal> animal(@PathVariable BigInteger id) {
 		Optional<Animal> animal= an.findById(id);
 		return animal;
 	}
